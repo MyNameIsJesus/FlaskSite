@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title%}
+Register
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-light">
+        <h1>Create user</h1><br>
+        <form method="post">
+            <h4>Username</h4>
+            <input type="file" style="display:none;" name="avatar" value="D:/paiton/flask site/noavatar.png">
+            <input type='text' name="username" id="username" class="form-control" placeholder="Enter username"><br>
+            <h4>Password</h4>
+            <input type='text' name="password" id="password" class="form-control" placeholder="Enter your password"><br>
+            <h4>E-mail</h4>
+            <input type='text' name="email" id="email" class="form-control" placeholder="Enter your mail"><br>
+            <input type="submit" class="btn btn-success" value="Create user">
+        </form>
+    </div>
+</div>
+{% endblock %}

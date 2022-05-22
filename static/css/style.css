@@ -1,0 +1,99 @@
+#ability:hover, #ability1:hover{
+    opacity:0.85;
+    transform: scale(1.03);
+    transition-duration:0.5s;
+
+}
+
+
+a{
+    text-decoration:none;
+}
+
+#edit_acc
+{
+   margin-left:110px;
+}
+
+
+body{
+    background: url("fon.jpg") no-repeat rgba(0, 0, 0, 0.6);
+    background-size: 100%;
+    position:relative;
+}
+
+#comment-ava, #comment-block
+{
+    display:inline-table;
+    position:relative;
+    height:100;
+}
+
+#comment-ava{
+    border:1px solid black;
+    margin-right:0.5vw;
+}
+
+#comment-name, #comment-text{
+    padding:0;
+    margin:0;
+    display:block;
+    position:relative;
+
+}
+
+
+input#title, input#intro, #full_text, #username, #password, #email
+{
+    border:2px black solid;
+}
+
+#log_form{
+    width:25vw;
+    left:30vw;
+}
+
+header{
+    height:10%;
+}
+main{
+    margin-bottom: 10%;
+    height:80%;
+
+}
+footer {
+    display:block;
+    clear: both;
+    
+    bottom:0%;
+    left:5%;
+    height = 10%;
+}
+
+
+.abilities{
+    text-decoration:none;
+
+}
+
+
+
+#ability{
+    width:40vw;
+    height:28vh;
+    display:inline-table;
+}
+
+
+#ability1{
+    display:inline-table;
+    position:relative;
+    width:40vw;
+    height:28vh;
+    margin-left:2%;
+}
+
+.comment-text{
+    width = 85wv;
+}
+

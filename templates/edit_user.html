@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title%}
+Edit account
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="alert alert-warning">
+        <h1>Edit article</h1>
+        <form method="post" enctype=multipart/form-data>
+            <input type='text' name="username" id="username" class="form-control" value="{{ user.username }}"><br>
+            <input type='text' name="password" id="password" class="form-control" value="{{ user.password }}"><br>
+            <br>
+            <input type="file" name="file" id="avatar"><br><br>
+            <input type="submit" class="btn btn-success" value="Confirm">
+        </form>
+    </div>
+</div>
+{% endblock %}

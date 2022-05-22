@@ -1,0 +1,22 @@
+{% extends 'base.html '%}
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <script language="JavaScript">alert("Please check your login details and try again.")</script>
+{% endif %}
+{% endwith %}
+<div class="container mt-5">
+    <div class="alert alert-light" id="log_form">
+        <form method="post" align="center" >
+            <h3>Username</h3>
+            <input type="text" name="username" id="username" placeholder="Enter your username"><br><br>
+            <h3>Password</h3>
+            <input type="text" name="password" id="password" placeholder="Enter your password"><br><br>
+            <input type="submit" class="btn btn-primary" value="log in"><br>
+        </form>
+    </div>
+</div>
+{% endblock %}

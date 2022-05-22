@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ user.username }}
+{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-warning">
+        <img src="static/img/{{user.username}}/{{ava}}" height="100" width="100" id="comment-ava">
+        <div id="comment-block">
+            <h2 id="name" >User: {{ user.username}}</h2>
+            <h2 id="email1">mail: {{ user.email}}</h2>
+            <p id="date">On site since {{user.date}}</p>
+        </div>
+        <br class="break-line">
+        <a class="btn btn-primary" href="/edit/{{user.username}}" id="edit_acc">Edit account</a>
+    </div>
+
+</div>
+{% endblock %}

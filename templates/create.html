@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title%}
+Create article
+{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <script> alert('All the fields shouldn\'t be empty')</script>
+{% endif%}
+{% endwith %}
+<div class="container mt-5">
+    {% if user.username|length != 0 %}
+        <div class="alert alert-light" id="forma">
+            <h1>Add your article</h1>
+            <form method="post">
+                <input type="hidden" name="username" value={{user.username}}><br>
+                <input type='text' name="title" id="title" class="form-control" placeholder="Type title"><br>
+                <input type='text' name="intro" id="intro" class="form-control" placeholder="Enter announce"><br>
+                <textarea name="full_text" id="full_text" cols="30" rows="10" class="form-control" placeholder="Article text"></textarea><br>
+                <input type="submit" class="btn btn-success" value="add article">
+            </form>
+        </div>
+    {% else %}
+        <div class="alert alert-danger">
+            <h1>Add your article</h1>
+            <p>You can't create articles now, please <a class='pls_reg' href="/register">register</a> or <a href="/login" class="pls_log">log in</a> to make your articles</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

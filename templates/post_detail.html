@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ article.title }}
+{% endblock %}
+{% block content %}
+<div class="container mt-5">
+
+    <div class="alert alert-info">
+        <h1 align="center" >{{ article.title }}</h1>
+        <p>{{ article.full_text }}</p>
+        <p><i>Made by {{ article.author }}</i></p>
+        <p><i>Date: {{ article.date.date() }}</i></p>
+        {% if user.username == article.author %}
+            <a href="/posts/{{ article.id }}/edit" class="btn btn-success">Edit</a>
+            <a href="/posts/{{ article.id }}/delete" class="btn btn-danger">Delete</a><br><br>
+
+        {% elif user.username|length == 0 %}
+            <p>Log in to edit the article</p><br>
+        {% endif %}
+        <div class="alert alert-light">
+            <h4><i class="bi bi-card-heading"></i> Comments</h4>
+            {% if user.username|length > 0%}
+                <form method="post">
+
+                        <textarea placeholder="Leave comment" cols="160"  class="comment-text" name="full_text"></textarea><br>
+                        <input type="hidden" value={{ user.username}} name="user">
+                        <input type='submit' class="btn btn-success" value="Add comment">
+
+
+                </form><br>
+            {% endif%}
+
+            {% for el in comments %}
+                    <div class="alert alert-primary">
+                        <img src="/static/img/{{el.user}}/{{ avas[el.user] }}" id="comment-ava"  height="50" width="50">
+                        <div id="comment-block">
+                            <h3 id="comment-name"><a href="/user/{{el.user}}"> {{ el.user }}</a></h3>
+                            <p id="comment-text">{{ el.comment_text }}</p>
+                            <p>/static/img/{{el.user}}/{{ avas[el.user] }}</p>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+</div>
+{% endblock %}

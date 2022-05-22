@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ user1.username }}
+{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-warning">
+        <img src="/static/img/{{user1.username}}/{{ava}}" height="100" width="100" id="comment-ava">
+        <div id="comment-block">
+            <h2 id="name" >User: {{ user1.username}}</h2>
+            <h2 id="email1">mail: {{ user1.email}}</h2>
+            <p id="date">On site since {{user1.date}}</p>
+        </div>
+        <br class="break-line">
+    </div>
+
+</div>
+{% endblock %}

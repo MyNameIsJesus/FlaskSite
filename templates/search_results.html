@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ pages }}
+{% endblock %}
+{% block content %}
+    <div class="container mt-5">
+        {% for el in article %}
+            {% if pages in el.title %}
+                <div class="alert alert-info">
+                    <h2>{{ el.title }}</h2>
+                    <p>{{ el.intro }}</p>
+                    <p><i>Date: {{ el.date.date() }}</i></p>
+                    <a href="/posts/{{ el.id }}" class="btn btn-warning">read more</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
